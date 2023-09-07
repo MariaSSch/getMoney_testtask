@@ -9,4 +9,4 @@
 - Команда для режима разработки `gulp`
 - Команда для сборки и запуска `gulp build`
 - слайдер выполнен с помощью библиотеки `Swiperjs`
-- Хостинг проекта выполнен на `Netlify`  
+- Хостинг проекта выполнен на [Netlify](https://my-trunk--effervescent-taiyaki-fe08e9.netlify.app)

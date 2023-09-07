@@ -843,9 +843,13 @@ ul li {
   line-height: 1.6rem;
   color: #a6a6a6;
   margin-bottom: 1.6rem;
+  position: relative;
 }
 .footer__faq-item:last-child {
   margin-bottom: 0;
+}
+.footer__faq-item:hover {
+  text-decoration: underline;
 }
 .footer__btn-section {
   display: flex;
@@ -901,6 +905,9 @@ ul li {
   font-size: 1.4rem;
   line-height: 1.6rem;
   color: #8b99ff;
+}
+.footer__policy:hover {
+  text-decoration: underline;
 }
 .footer hr {
   color: #ffffff;

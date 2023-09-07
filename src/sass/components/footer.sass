@@ -42,8 +42,11 @@
     &__faq-item
         @include mixins.menuText($color: vars.$footer_main_color)
         margin-bottom: 1.6rem
+        position: relative
         &:last-child
             margin-bottom: 0
+        &:hover
+            text-decoration: underline
     &__btn-section
         display: flex
         flex-direction: column
@@ -62,6 +65,8 @@
             @include mixins.accentbtnHover
     &__policy
         @include mixins.menuText($color: vars.$footer_policy_color)
+        &:hover
+            text-decoration: underline
     hr
         color: vars.$negative_color
         opacity: 0.1
