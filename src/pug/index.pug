@@ -6,15 +6,14 @@ html(lang="ru")
     head
         meta(charset="utf-8")
         meta(name= "viewport" content= "width=device-width, initial-scale=1.0")
-        base(href="/")
-        link(rel="stylesheet" href="/fa/css/all.min.css" type="text/css")
-        link(rel="stylesheet" href="/css/main.css" type="text/css")
-        link(rel="icon" href="/img/icon.png" type="image/x-icon")
+        link(rel="stylesheet" href="fa/css/all.min.css" type="text/css")
+        link(rel="stylesheet" href="css/main.css" type="text/css")
+        link(rel="icon" href="img/icon.png" type="image/x-icon")
         title GetMoney 
     body
         header(class= "header")
             div(class= "header__container")
-                img(src="/img/logo.png", alt="logo" class= "header__logo")
+                img(src="img/logo.png", alt="logo" class= "header__logo")
                 nav(class= "header__menu-container")
                     ul(class= "header__menu") 
                         each item in menuItems 
@@ -33,15 +32,15 @@ html(lang="ru")
                     p(class= "jumbotron__request-text") Оставьте заявку и получите сумму на карту уже через 5 минут
                     +getLoanBtn("jumbotron__request-loan")
                 div(class= "jumbotron__picture-container")
-                    img(src="/img/bg_phones.png", alt="phones", class= "jumbotron__picture")
+                    img(src="img/bg_phones.png", alt="phones", class= "jumbotron__picture")
                 div(class= "jumbotron__payment-info")
                     p(class= "jumbotron__payment-text") Работаем с картами
                     div(class= "jumbotron__logo-container")
-                        +logoSet("/img/logo_mir.png", "mir")
-                        +logoSet("/img/logo_master.png", "master")
-                        +logoSet("/img/logo_visa.png", "visa")
-                        +logoSet("/img/logo_umoney.png", "umoney")
-                        +logoSet("/img/logo_qiwi.png", "qiwi")
+                        +logoSet("img/logo_mir.png", "mir")
+                        +logoSet("img/logo_master.png", "master")
+                        +logoSet("img/logo_visa.png", "visa")
+                        +logoSet("img/logo_umoney.png", "umoney")
+                        +logoSet("img/logo_qiwi.png", "qiwi")
 
             section(class= "section slider swiper")
                 h2(class= "main-title slider__title") Уменьшайте процент с каждым последующим займом
@@ -91,7 +90,7 @@ html(lang="ru")
                 div(class= "footer__top")
                     div(class= "footer__contacts-and-logo")
                         div(class= "footer__logo")
-                            img(src="/img/logo_neg.png", alt="logo")
+                            img(src="img/logo_neg.png", alt="logo")
                         div(class= "footer__contacts")
                             each item in footerContacts 
                                 div(class= "footer__contact-item")
@@ -115,7 +114,7 @@ html(lang="ru")
                     p(class= "footer__license") Лицензия ЦБ: №1903475009492
                     p(class= "footer__license") Адрес: 443011, г. Самара, ул. Ново-Садовая, д. 307А, помещение №6, этаж 6
                     p(class= "footer__license") **Не является офертой. решение о предоставлении займа и его сумме остается на усмотрение компании
-        script(src="./js/script.js") 
-        script(src="./fa/js/all.min.js")
+        script(src="js/script.js") 
+        script(src="fa/js/all.min.js")
         script(src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js")
-        script(src="./js/swiper.js")
+        script(src="js/swiper.js")
