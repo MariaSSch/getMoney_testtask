@@ -8,6 +8,9 @@
     justify-content: space-between
     align-items: center
     background-color: vars.$bg_color
+    position: sticky
+    top: 0
+    z-index: 10
     &__container
         display: flex
         align-items: center
@@ -63,14 +66,13 @@
             color: vars.$accent_color
 @media (max-width: 1282px)
     .header
-        position: relative
         &__menu-container
             display: none
             position: absolute
             top: 7.2rem
-            right: 0
+            right: 1rem
             padding: 0.2rem
-            background-color: vars.$mobile
+            background-color: vars.$negative_color
         &__menu
             flex-direction: column
             align-items: flex-end

@@ -2,7 +2,6 @@
 @use "./utils/_fonts"
 @use "./utils/_vars"
 @use "./utils/_mixins"
-@use "./utils/_media"
 @use "./components/header"
 @use "./components/jumbotron"
 @use "./components/slider"
@@ -25,7 +24,7 @@ html
                 padding: 5rem 1.5rem
         .main-title
             @include mixins.mainTitle
-        @media (max-width: 1200px)
+        @media (max-width: 768px)
             .main-title, .secondary-title
                 font-size: 4rem
                 line-height: 4rem

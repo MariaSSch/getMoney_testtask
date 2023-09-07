@@ -8,5 +8,5 @@
 
 - Команда для режима разработки `gulp`
 - Команда для сборки и запуска `gulp build`
-- слайдер выполнен с помощью библиотеки ![Swiperjs](https://img.shields.io/badge/Swiperjs-eeeeee?style=for-the-badge&logo=Swiperjs&logoColor=4a4a4a)
-- Хостинг проекта выполнен на `Github pages`  
+- слайдер выполнен с помощью библиотеки `Swiperjs`
+- Хостинг проекта выполнен на `Netlify`  
