@@ -1,0 +1,35 @@
+@use "./utils/_reset"
+@use "./utils/_fonts"
+@use "./utils/_vars"
+@use "./utils/_mixins"
+@use "./utils/_media"
+@use "./components/header"
+@use "./components/jumbotron"
+@use "./components/slider"
+@use "./components/calculator"
+@use "./components/footer"
+
+html
+    background-color: rgba(205, 205, 205, 1)
+    body
+        max-width: 1440px
+        margin: 0 auto
+        background-color: vars.$bg_color
+        .section
+            @include mixins.section
+        @media (max-width: 1200px)
+            .section
+                padding: 10rem 1.5rem
+        @media (max-width: 576px)
+            .section
+                padding: 5rem 1.5rem
+        .main-title
+            @include mixins.mainTitle
+        @media (max-width: 1200px)
+            .main-title, .secondary-title
+                font-size: 4rem
+                line-height: 4rem
+
+
+
+            

@@ -1,0 +1,20 @@
+mixin sliderItem(title, descr, percent, loanRange, src )
+    div(class= "slider__item swiper-slide")
+        div(class= "slider__item-main")
+            p(class= "slider__item-descr") Тариф
+            p(class= "slider__item-title card-title") #{title}
+            p(class= "slider__item-descr") #{descr}
+            div(class= "slider__item-options-wrapper")
+                div(class= "slider__item-options")
+                    p(class= "slider__item-option card-option-text") Процентная ставка:
+                    p(class= "slider__item-option-value-percent") #{percent}
+                div(class= "slider__item-options")
+                    p(class= "slider__item-option") Сумма займа:
+                    p(class= "slider__item-option-value-range") #{loanRange}
+            +getLoanBtn("slider__request-loan")
+        div(class= "slider__card")
+            img(class= "slider__card-img" src= src, alt="card")
+        div(class= "slider__nav-btns")
+            div(class= "slider__nav-left swiper-button-prev"): i(class="fa-solid fa-arrow-left")
+            div(class= "slider__nav-right swiper-button-next"): i(class="fa-solid fa-arrow-right")
+

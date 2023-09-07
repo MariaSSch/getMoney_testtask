@@ -1,0 +1,113 @@
+@use "../sass/utils/_vars"
+@use "../sass/utils/_mixins"
+
+.footer
+    padding: 5.8rem 7.5rem
+    display: flex
+    flex-direction: column
+    background-color: vars.$main_color
+    width: 100%
+    &__top
+        display: flex
+        justify-content: space-between
+        padding-bottom: 6.7rem
+    &__contacts-and-logo
+        display: flex
+        flex-direction: column
+        flex-basis: 59%
+
+    &__contacts
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        margin-top: 3.8rem
+        & > .footer__policy
+            display: none
+    &__contact-item
+        margin-top: 1rem
+    &__contact-position
+        @include mixins.menuText($color: vars.$footer_secondary_color)
+    &__contact-value
+        @include mixins.runnerValueText($color: vars.$negative_color)
+        margin: 0.7rem 0
+    &__contact-note
+        font-weight: 300
+        font-size: 1.2rem
+        line-height: 1.4rem
+        color: vars.$footer_secondary_color
+    &__faq
+        display: flex
+        flex-direction: column
+    &__faq-item
+        @include mixins.menuText($color: vars.$footer_main_color)
+        margin-bottom: 1.6rem
+        &:last-child
+            margin-bottom: 0
+    &__btn-section
+        display: flex
+        flex-direction: column
+    &__button-request
+        @include mixins.accentBtn(19rem, 4rem)
+        box-shadow: none
+        &:hover
+            @include mixins.accentbtnHover
+    &__button-signin
+        @include mixins.accentBtn(19rem, 4rem)
+        border: 1px solid vars.$footer_main_color
+        background-color: transparent
+        box-shadow: none
+        margin: 1rem 0 4.2rem
+        &:hover
+            @include mixins.accentbtnHover
+    &__policy
+        @include mixins.menuText($color: vars.$footer_policy_color)
+    hr
+        color: vars.$negative_color
+        opacity: 0.1
+    &__bottom
+        padding-top: 7rem
+    &__license
+        font-weight: 400
+        font-size: 1.2rem
+        line-height: 1.4rem
+        color: vars.$footer_main_color
+        &:nth-child(2)
+            margin: 1rem 0
+        &:nth-child(4)
+            margin: 1rem 0
+
+@media (max-width: 768px)
+    .footer
+        padding: 4rem 0 7.9rem
+        &__top
+            flex-direction: column-reverse
+            align-items: center
+        &__contacts-and-logo
+            order: -3
+        &__logo
+            display: none
+        &__contacts
+            flex-direction: column
+            align-items: center
+            margin-top: 0.8rem
+            & > .footer__policy
+                display: block
+                margin-top: 4rem
+        &__contact-item
+            text-align: center
+            margin-top: 0
+            &:nth-child(2)
+                margin: 3.6rem 0
+        &__faq
+            align-items: center
+            order: 1
+        &__btn-section
+            margin-top: 4rem
+            & > .footer__policy
+                display: none
+        &__bottom
+                padding: 4rem 1.5rem 0
+        &__license
+            font-size: 1rem
+            line-height: 1.2rem

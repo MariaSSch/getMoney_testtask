@@ -1,0 +1,90 @@
+@use "../sass/utils/_vars"
+@use "../sass/utils/_mixins"
+
+.header
+    width: 100%
+    padding: 1.6rem 7.5rem 2rem 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: vars.$bg_color
+    &__container
+        display: flex
+        align-items: center
+    &__logo
+        margin-right: 7rem
+    &__menu
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__menu-item
+        @include mixins.menuText($color: vars.$secondary_color)
+        margin-right: 3rem
+        cursor: pointer
+        &:hover
+            color: vars.$accent_color
+    &__button-set
+        display: flex
+        
+    &__button-signin
+        padding: 1.1rem 2rem 1.1rem 1.7rem
+        border-radius: 0.5rem
+        border: 0.1rem solid #CDD3FF
+        color: vars.$accent_color
+        display: flex
+        position: relative
+        &:hover
+            background-color: vars.$accent_color
+            color: vars.$negative_color
+        &:active
+            top: 0.5rem
+        .fa-user
+            margin-right: 1rem
+            font-size: 1.8rem
+        span
+            font-weight: 700
+            font-size: 1.4rem
+    &__button-request
+        @include mixins.accentBtn($width: 16rem, $height: 4rem)
+        margin-left: 1rem
+    &__button-bar
+        display: none
+        width: 4rem
+        height: 4rem
+        margin-left: 0.5rem
+        border-radius: 0.5rem
+        background-color: vars.$negative_color
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        .fa-bars
+            font-size: 2rem
+            line-height: 4rem
+            color: vars.$accent_color
+@media (max-width: 1282px)
+    .header
+        position: relative
+        &__menu-container
+            display: none
+            position: absolute
+            top: 7.2rem
+            right: 0
+            padding: 0.2rem
+            background-color: vars.$mobile
+        &__menu
+            flex-direction: column
+            align-items: flex-end
+        &__menu-item
+            margin-right: 0.5rem
+        &__button-signin
+            padding: 1.1rem 1.2rem
+            background-color: vars.$negative_color
+            border: none
+            .fa-user
+                margin-right: 0
+            span
+                display: none
+        &__button-request
+            display: none
+        &__button-bar
+            display: flex

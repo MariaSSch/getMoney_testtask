@@ -1,0 +1,105 @@
+@use "./_vars"
+
+@mixin accentBtn($width, $height)
+    font-weight: 700
+    font-size: 1.4rem
+    line-height: 1.9rem
+    color: vars.$negative_color
+    background-color: vars.$accent-color
+    border-radius: 0.5rem
+    width: $width
+    height: $height
+    display: flex
+    justify-content: center
+    align-items: center
+    box-shadow: 0 1.8rem 2rem -1rem rgba(60, 80, 232, 0.6)
+    -webkit-box-shadow: 0 1.8rem 2rem -1rem rgba(60, 80, 232, 0.6)
+    -moz-box-shadow: 0 1.8rem 2rem -1rem rgba(60, 80, 232, 0.6)
+@mixin accentbtnHover
+    color: vars.$accent-color
+    background-color: vars.$negative_color
+    cursor: pointer
+@mixin secondaryTitle
+    font-weight: 500
+    font-size: 5.7rem
+    line-height: 5.7rem
+    letter-spacing: -2%
+    color: vars.$main_color
+    margin-bottom: 3rem
+
+@mixin mainTitle
+    font-weight: 500
+    font-size: 6rem
+    line-height: 6rem
+    letter-spacing: -2%
+    color: vars.$main_color
+
+@mixin cardTitle
+    font-weight: 500
+    font-size: 3rem
+    line-height: 3rem
+    letter-spacing: -2%
+    color: vars.$main_color
+
+@mixin cardDesrcText
+    font-weight: 400
+    font-size: 1.4rem
+    line-height: 2rem
+    color: vars.$secondary_color
+
+@mixin cardOptionText($color: vars.$secondary_color)
+    font-weight: 400
+    font-size: 2rem
+    line-height: 2.8rem
+    color: $color
+
+@mixin cardLoanText
+    font-weight: 700
+    font-size: 2rem
+    line-height: 2.8rem
+    color: vars.$accent_color
+
+@mixin runnerText($color: vars.$secondary_color)
+    font-weight: 400
+    font-size: 2rem
+    line-height: 2.8rem
+    color: $color
+
+    
+@mixin runnerRangeText
+    font-weight: 300
+    font-size: 2rem
+    line-height: 2rem
+    letter-spacing: -2%
+    color: vars.$secondary_color
+
+@mixin runnerValueText($color: vars.$secondary_color)
+    font-weight: 500
+    font-size: 3rem
+    line-height: 3rem
+    letter-spacing: -2%
+    color: $color
+
+@mixin loanResult
+    font-weight: 500
+    font-size: 4rem
+    line-height: 4rem
+    letter-spacing: -0.8px
+    color: vars.$negative_color
+
+@mixin loanResult
+    font-weight: 500
+    font-size: 2.6rem
+    line-height: 2.6rem
+    letter-spacing: -2%
+    color: vars.$negative_color
+
+@mixin menuText($color: vars.$secondary_color)
+    font-weight: 400
+    font-size: 1.4rem
+    line-height: 1.6rem
+    color: $color
+
+@mixin section
+    padding: 8.5rem 15.5rem 8rem 15.5rem
+    width: 100%

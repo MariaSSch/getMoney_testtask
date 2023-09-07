@@ -1,0 +1,115 @@
+include includes/config.pug
+include includes/mixins.pug
+
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(name= "viewport" content= "width=device-width, initial-scale=1.0")
+        base(href="/")
+        link(rel="stylesheet" href="/../fa/css/all.min.css" type="text/css")
+        link(rel="stylesheet" href="/../css/main.css" type="text/css")
+        //- link(rel="icon" href="media/favicon-16x16.png" type="image/x-icon")
+        title GetMoney 
+    body
+        header(class= "header")
+            div(class= "header__container")
+                img(src="../img/logo.png", alt="logo" class= "header__logo")
+                nav(class= "header__menu-container")
+                    ul(class= "header__menu") 
+                        each item in menuItems 
+                            li(class= "header__menu-item"): a #{item} 
+            div(class= "header__button-set")
+                a(href="#" class= "header__button-signin") 
+                    i(class="fa-solid fa-user")
+                    span Войти
+                button(type="button" class= "header__button-request") Оставить заявку
+                div(class= "header__button-bar")
+                    i(class="fa-solid fa-bars")
+        main 
+            section(class= "jumbotron")
+                div(class= "jumbotron__info")
+                    h1(class= "secondary-title jumbotron__title") Займ на карту по заниженной ставке от 0,3% 
+                    p(class= "jumbotron__request-text") Оставьте заявку и получите сумму на карту уже через 5 минут
+                    +getLoanBtn("jumbotron__request-loan")
+                div(class= "jumbotron__picture-container")
+                    img(src="../img/bg_phones.png", alt="phones", class= "jumbotron__picture")
+                div(class= "jumbotron__payment-info")
+                    p(class= "jumbotron__payment-text") Работаем с картами
+                    div(class= "jumbotron__logo-container")
+                        +logoSet("../img/logo_mir.png", "mir")
+                        +logoSet("../img/logo_master.png", "master")
+                        +logoSet("../img/logo_visa.png", "visa")
+                        +logoSet("../img/logo_umoney.png", "umoney")
+                        +logoSet("../img/logo_qiwi.png", "qiwi")
+
+            section(class= "section slider swiper")
+                h1(class= "main-title slider__title") Уменьшайте процент с каждым последующим займом
+                div(class= "slider__wrapper swiper-wrapper")
+                    each item in sliderItems 
+                        +sliderItem(item.title, item.descr, item.percent, item.loanRange, item.src )
+            
+            section(class= "section calculator")
+                h1(class= "main-title calculator__title") Рассчитать займ
+                div(class= "calculator__wrapper")
+
+                    form(action="" id= "calculator" class= "calculator__form")
+
+                        div(class= "calculator__form-sum")
+                            div(class= "calculator__form-sum-range calculator__option")
+                                div(class= "calculator__option")
+                                    p(class= "calculator__form-option-text") Выберите нужную сумму:
+                                    p(class= "calculator__form-option-value") 15 000
+                                        span(class= "symbol") ₽
+                            input(type="range" min= "1000" max= "45000" step= "100" value= "15000" name="sum" id= "sum"  class= "calculator__input")
+                            div(class= "calculator__option")
+                                p(class= "calculator__form-range-text") 1 000
+                                p(class= "calculator__form-range-text") 45 000
+
+                        div(class= "calculator__form-period")
+                            div(class= "calculator__option")
+                                p(class= "calculator__form-option-text") Выберите срок:
+                                p(class= "calculator__form-option-value") 14
+                                    span(class= "string") дней
+                            input(type="range" min= "7" max= "50" step= "1" value= "14" name="period" class= "calculator__input")
+                            div(class= "calculator__option")
+                                p(class= "calculator__form-range-text") 7 дней
+                                p(class= "calculator__form-range-text") 50 дней
+                    div(class= "calculator__result")
+                        p(class= "calculator__result-text") Сумма к возврату:
+                        p(class= "calculator__result-value") 15 200 
+                            span(class= "string") рублей
+                        p(class= "calculator__result-text") Срок до (включительно):
+                        p(class= "calculator__result-value") 20.03.2023
+                        +getLoanBtn("calculator__request-loan")
+            footer(class= "footer")
+                div(class= "footer__top")
+                    div(class= "footer__contacts-and-logo")
+                        div(class= "footer__logo")
+                            img(src="../img/logo_neg.png", alt="logo")
+                        div(class= "footer__contacts")
+                            each item in footerContacts 
+                                div(class= "footer__contact-item")
+                                    p(class= "footer__contact-position") #{item.position}
+                                    p(class= "footer__contact-value") #{item.value}
+                                    p(class= "footer__contact-note") #{item.note}
+
+                            a(href="#" class= "footer__policy") Политика конфиденциальности
+                    div(class= "footer__faq")
+                        each q in footerFAQ
+                            a(href="#" class= "footer__faq-item") #{q}
+                    div(class= "footer__btn-section")
+                        button(type="button" class= "footer__button-request") Оставить заявку
+                        a(href="#" class= "footer__button-signin") Войти в личный кабинет
+                        a(href="#" class= "footer__policy") Политика конфиденциальности
+                hr
+                div(class= "footer__bottom")
+                    p(class= "footer__license") Деятельность осуществляет Общество с ограниченной ответственностью Микрокредитная компания "Каппадокия" (ООО МКК "Каппадокия"), которая состоит в государственном реестре микрофинансовых организаций от 27.12.2019 за номером 1903475009492
+                    p(class= "footer__license") Является участником СРО Союз Микрофинансовый Альянс "Институты развития малого и среднего бизнеса", дата вступления 09ю04ю2020 года. Адрес место нахождения СРО: г. Москва, ул. Сущёвская, д. 21 этаж / офис 5/513,514
+                    p(class= "footer__license") ИНН: 7459007268 ОГРН: 1197456052199
+                    p(class= "footer__license") Лицензия ЦБ: №1903475009492
+                    p(class= "footer__license") Адрес: 443011, г. Самара, ул. Ново-Садовая, д. 307А, помещение №6, этаж 6
+                    p(class= "footer__license") **Не является офертой. решение о предоставлении займа и его сумме остается на усмотрение компании
+
+        script(src="./../fa/js/all.min.js" type="text/javascript")
+        script(src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" type="text/javascript")
+        script(src="./../js/swiper.js" type="text/javascript")
